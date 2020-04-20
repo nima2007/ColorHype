@@ -1,14 +1,13 @@
-import java.io.File;
-import java.io.IOException;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
+
 
 
 class Main {
 
-    public static void main(String [] args)
-    {
+    public static void main(String [] args) {
+
         System.out.println("Greeeeeen narwals: Nima & Sherin");
+        ImageEngine wheelie = new ImageEngine("input_pics/wheelie.png");
+
     }
 
 }
