@@ -7,6 +7,8 @@ class ImageEngine {
 
     private BufferedImage image;
     private String path;
+    private int height;
+    private int width;
 
     ImageEngine( String path){
         this.path = path;
@@ -19,19 +21,34 @@ class ImageEngine {
             e.printStackTrace();
         }
         System.out.println("File read successfuly");
-        System.out.println("Image height: " + image.getHeight() );
-        System.out.println("Image width: " + image.getWidth() );
+
+        this.height = image.getHeight();
+        this.width = image.getWidth();
+
+        System.out.println("Image height: " + height );
+        System.out.println("Image width: " + width);
     }
 
-    void write()
-    {
-        try
-        {
+    private void colorSwap ( char a, char b){
+        a = 'b';
+        b = 'r';
+
+        for (int i = 0; i < height; ++i) {
+            for (int j =0; j < width; ++j) {
+
+                System.out.println("RGB value is: " + image.getRGB(i,j) );
+
+            }
+        }
+
+    }
+
+    void write() {
+        try {
             File of = new File(path+"_out");
             ImageIO.write(image, "jpg", of);
         }
-        catch(IOException e)
-        {
+        catch(IOException e) {
             System.out.println("Unable to write file.");
             e.printStackTrace();
         }
