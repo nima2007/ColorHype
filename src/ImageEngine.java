@@ -35,9 +35,12 @@ class ImageEngine {
 
         for (int i = 0; i < height; ++i) {
             for (int j =0; j < width; ++j) {
-
-                System.out.println("RGB value is: " + image.getRGB(i,j) );
-
+                int rgb = image.getRGB(i,j);
+                System.out.println("RGB value is: " + rgb );
+                int red = (rgb >> 16) & 0xff;
+                int green = (rgb >> 8) & 0xff;
+                int blue = (rgb) & 0xff;
+                System.out.println("rgb: " + red + ", " + green + ", " + blue);
             }
         }
 
