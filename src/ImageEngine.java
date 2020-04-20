@@ -25,22 +25,28 @@ class ImageEngine {
         this.height = image.getHeight();
         this.width = image.getWidth();
 
-        System.out.println("Image height: " + height );
-        System.out.println("Image width: " + width);
+        System.out.println(" Image height: " + image.getHeight() );
+        System.out.println(" Image width: " + this.width);
+
     }
 
-    private void colorSwap ( char a, char b){
-        a = 'b';
-        b = 'r';
+    void colorSwap ( char a, char b){
 
-        for (int i = 0; i < height; ++i) {
-            for (int j =0; j < width; ++j) {
-                int rgb = image.getRGB(i,j);
+        for (int i = 0; i < (height-1); i++) {
+            for (int j =0; j < width; j++) {
+
+                //System.out.println(" height[i]: " + i );
+                //System.out.println(" width[i]: " + j);
+
+                int rgb = image.getRGB(j,i);
                 System.out.println("RGB value is: " + rgb );
-                int red = (rgb >> 16) & 0xff;
+
+                int red = (rgb >> 16) & 0xff; //Suggestion: (rgb << 16) | 0xff hehe
                 int green = (rgb >> 8) & 0xff;
                 int blue = (rgb) & 0xff;
+
                 System.out.println("rgb: " + red + ", " + green + ", " + blue);
+                System.out.println();
             }
         }
 
