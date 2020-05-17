@@ -31,6 +31,7 @@ class ImageEngine {
     }
 
     void colorSwap ( char a, char b){
+        /* Options are 'r', 'g' 'b' */
 
         for (int i = 0; i < (height-1); i++) {
             for (int j =0; j < width; j++) {
@@ -47,6 +48,7 @@ class ImageEngine {
 
                 System.out.println("rgb: " + red + ", " + green + ", " + blue);
                 System.out.println();
+
             }
         }
 
