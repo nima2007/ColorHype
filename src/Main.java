@@ -8,7 +8,7 @@ class Main {
         System.out.println("Greeeeeen narwals: Nima & Sherin");
         ImageEngine wheelie = new ImageEngine("input_pics/wheelie.png");
 
-        wheelie.colorSwap( '1');
+        wheelie.colorSwap( '3');
         wheelie.write();
         /*  1 - r to g
             2 - g to b

@@ -43,7 +43,7 @@ class ImageEngine {
                 //System.out.println(" width[i]: " + j);
 
                 int rgb = image.getRGB(j,i);
-                System.out.println("RGB value is: " + rgb );
+                //System.out.println("RGB value is: " + rgb );
 
                 int red = (rgb >> 16) & 0xff; //Suggestion: (rgb << 16) | 0xff hehe
                 int green = (rgb >> 8) & 0xff;
@@ -78,8 +78,10 @@ class ImageEngine {
     void write() {
         System.out.println("Writing file now.");
         try {
-            File of = new File(path+"_out");
-            ImageIO.write(image, "jpg", of);
+            File of = new File(/*path+*/"big.png");
+
+            ImageIO.write(image, "jbig", of);
+
         }
         catch(IOException e) {
             System.out.println("Unable to write file.");
