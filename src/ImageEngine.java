@@ -78,9 +78,9 @@ class ImageEngine {
     void write() {
         System.out.println("Writing file now.");
         try {
-            File of = new File(/*path+*/"big.png");
+            File of = new File(path+"sherinster.png");
 
-            ImageIO.write(image, "jbig", of);
+            ImageIO.write(image, "png", of);
 
         }
         catch(IOException e) {
