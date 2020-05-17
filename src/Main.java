@@ -8,8 +8,8 @@ class Main {
         System.out.println("Greeeeeen narwals: Nima & Sherin");
         ImageEngine wheelie = new ImageEngine("input_pics/wheelie.png");
 
-        wheelie.colorSwap('b','r');
-
+        wheelie.colorSwap((char) '1');
+        wheelie.write();
         /* User inputs two colors, first is the color to swatch
         second is the color to switch to
          */
