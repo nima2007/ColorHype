@@ -57,23 +57,18 @@ class ImageEngine {
                 switch (a) {
                     case '1':
                          col = new Color( green, red, blue);
-                        image.setRGB(i, j, col.getRGB());
-
                         break;
                     case '2':
                          col = new Color(red, blue, green);
-                        image.setRGB(i, j, col.getRGB());
-
                         break;
                     case '3':
                          col = new Color(blue, green, red);
-                        image.setRGB(i, j, col.getRGB());
                         break;
                     default:
                         throw new EmptyStackException();
-                        break;
 
                 }
+                image.setRGB(i, j, col.getRGB());
 
             }
         }
