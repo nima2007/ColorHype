@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
@@ -46,8 +47,11 @@ class ImageEngine {
                 int green = (rgb >> 8) & 0xff;
                 int blue = (rgb) & 0xff;
 
-                System.out.println("rgb: " + red + ", " + green + ", " + blue);
-                System.out.println();
+                Color col = new Color(red, green, blue);
+                image.setRGB(i, j, col.getRGB());
+
+                //System.out.println("rgb: " + red + ", " + green + ", " + blue);
+                //System.out.println();
 
             }
         }
