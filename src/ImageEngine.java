@@ -2,6 +2,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
+import java.util.EmptyStackException;
 import javax.imageio.ImageIO;
 
 class ImageEngine {
@@ -31,7 +32,8 @@ class ImageEngine {
 
     }
 
-    void colorSwap ( char a, char b){
+    void colorSwap ( char a){
+        /* the data don't change, but the interperation */
         /* Options are 'r', 'g' 'b' */
 
         for (int i = 0; i < (height-1); i++) {
@@ -47,11 +49,31 @@ class ImageEngine {
                 int green = (rgb >> 8) & 0xff;
                 int blue = (rgb) & 0xff;
 
-                Color col = new Color(red, green, blue);
-                image.setRGB(i, j, col.getRGB());
+                Color col;
 
                 //System.out.println("rgb: " + red + ", " + green + ", " + blue);
                 //System.out.println();
+
+                switch (a) {
+                    case '1':
+                         col = new Color( green, red, blue);
+                        image.setRGB(i, j, col.getRGB());
+
+                        break;
+                    case '2':
+                         col = new Color(red, blue, green);
+                        image.setRGB(i, j, col.getRGB());
+
+                        break;
+                    case '3':
+                         col = new Color(blue, green, red);
+                        image.setRGB(i, j, col.getRGB());
+                        break;
+                    default:
+                        throw new EmptyStackException();
+                        break;
+
+                }
 
             }
         }
