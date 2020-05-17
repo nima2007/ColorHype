@@ -76,6 +76,7 @@ class ImageEngine {
     }
 
     void write() {
+        System.out.println("Writing file now.");
         try {
             File of = new File(path+"_out");
             ImageIO.write(image, "jpg", of);
@@ -84,6 +85,7 @@ class ImageEngine {
             System.out.println("Unable to write file.");
             e.printStackTrace();
         }
+        System.out.println("Done writing.");
     }
 
 }
