@@ -68,7 +68,7 @@ class ImageEngine {
                         throw new EmptyStackException();
 
                 }
-                image.setRGB(j, i, col.getRGB());
+                image.setRGB( j,i, col.getRGB());
 
             }
         }
